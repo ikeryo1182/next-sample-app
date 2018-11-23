@@ -1,15 +1,19 @@
 import * as React from "react";
 
 import DefaultLayout from '../src/components/layouts/default'
+import CustomHead from "../src/components/head/index";
 
-class Page extends React.Component<{}> {
+class IndexPage extends React.Component<{}> {
     public render() {
         return (
-            <DefaultLayout>
-                 <div>Welcome to next.js!</div>
-            </DefaultLayout>
+            <>
+                <CustomHead pathname="top" />
+                <DefaultLayout>
+                    <div>Welcome to top</div>
+                </DefaultLayout>
+            </>
         )
     }
 }
 
-export default Page
+export default IndexPage
