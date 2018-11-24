@@ -1,5 +1,7 @@
 import * as React from "react"
 
+import style from "./index.scss"
+
 import Link from "next/link"
 
 interface DefaultLayoutProps {
@@ -9,7 +11,7 @@ interface DefaultLayoutProps {
 const DefaultLayout: React.SFC<DefaultLayoutProps> = (props: DefaultLayoutProps) => {
   return (
     <div>
-      <header>
+      <header className={style.header}>
         <Link href="/">
           <a>Top</a>
         </Link>
@@ -21,7 +23,17 @@ const DefaultLayout: React.SFC<DefaultLayoutProps> = (props: DefaultLayoutProps)
         </Link>
       </header>
       {props.children}
-      <footer>footer</footer>
+      <footer className={style.footer}>
+        <Link href="/">
+          <a>Top</a>
+        </Link>
+        <Link href="/about">
+          <a>About</a>
+        </Link>
+        <Link href="/contact">
+          <a>Contact</a>
+        </Link>
+      </footer>
     </div>
   )
 }

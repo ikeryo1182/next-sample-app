@@ -1,5 +1,7 @@
 import * as React from "react";
 
+import style from "./index.scss";
+
 import DefaultLayout from '../../src/components/layouts/default'
 import CustomHead from "../../src/components/head/index";
 
@@ -9,7 +11,7 @@ class AboutPage extends React.Component<{}> {
             <>
                 <CustomHead pathname="about" />
                 <DefaultLayout>
-                    <div>Welcome to about!</div>
+                    <div className={style.content}>Welcome to about!</div>
                 </DefaultLayout>
             </>
         )
