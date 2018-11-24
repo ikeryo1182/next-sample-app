@@ -26,16 +26,16 @@
     ],
     "typeRoots": [
       "node_modules/@types",
-      "./types"
+      "types"
     ],
-    "outDir": "./.next",
+    "outDir": ".next",
     "rootDirs": [
-      "./pages",
-      "./src"
+      "pages",
+      "src"
     ]
   },
   "exclude": [
-    "./node_modules",
-    "./.next"
+    "node_modules",
+    ".next"
   ]
 }
