@@ -1,0 +1,38 @@
+{
+    "parserOptions": {
+      "sourceType": "module"
+    },
+    "parser": "typescript-eslint-parser",
+    "plugins": ["typescript", "react"],
+    "rules": {
+      "react/jsx-sort-props": "error"
+    },
+    "root": true,
+    "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:prettier/recommended"],
+    "overrides": [
+      {
+        "files": "*.{ts,tsx}",
+        "rules": {
+          "no-undef": "off",
+          "typescript/no-unused-vars": "error"
+        }
+      },
+      {
+        "files": ["*.js"],
+        "env": {
+          "node": true
+        }
+      },
+      {
+        "files": "scripts/**/*.{js,ts}",
+        "rules": {
+          "no-console": "off"
+        }
+      }
+    ],
+    "settings": {
+      "react": {
+        "version": "16.5.1"
+      }
+    }
+  }
