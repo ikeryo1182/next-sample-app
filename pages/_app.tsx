@@ -1,29 +1,27 @@
-import React from 'react'
-import App, { Container } from 'next/app'
+import App, { Container } from "next/app";
+import React from "react";
 
 interface AppProps {
-  Component: React.Component
-  pageProps: any
+  Component: React.Component;
+  pageProps: any;
 }
 
 class Application extends App<AppProps> {
   static async getInitialProps({ Component, ctx }) {
+    const pageProps = Component.getInitialProps ? await Component.getInitialProps(ctx) : {};
 
-    const pageProps =
-      Component.getInitialProps ? await Component.getInitialProps(ctx) : {}
-
-    return { pageProps }
+    return { pageProps };
   }
 
   render() {
-    const { Component, pageProps } = this.props
+    const { Component, pageProps } = this.props;
 
     return (
       <Container>
-          <Component { ...pageProps } />
+        <Component {...pageProps} />
       </Container>
-    )
+    );
   }
 }
 
-export default Application
+export default Application;

@@ -1,11 +1,10 @@
-import * as React from "react"
+import Link from "next/link";
+import * as React from "react";
 
-import style from "./index.scss"
-
-import Link from "next/link"
+import style from "./index.scss";
 
 interface DefaultLayoutProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 const DefaultLayout: React.SFC<DefaultLayoutProps> = (props: DefaultLayoutProps) => {
@@ -35,7 +34,7 @@ const DefaultLayout: React.SFC<DefaultLayoutProps> = (props: DefaultLayoutProps)
         </Link>
       </footer>
     </div>
-  )
-}
+  );
+};
 
-export default DefaultLayout
+export default DefaultLayout;

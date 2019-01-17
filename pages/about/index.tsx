@@ -1,9 +1,8 @@
 import * as React from "react";
 
-import style from "./index.scss";
-
-import DefaultLayout from "../../src/components/layouts/default";
 import CustomHead from "../../src/components/head/index";
+import DefaultLayout from "../../src/components/layouts/default";
+import style from "./index.scss";
 
 class AboutPage extends React.Component<{}> {
   public render() {
