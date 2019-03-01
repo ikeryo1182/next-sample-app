@@ -4,16 +4,21 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "lint": "import-sort **/*.{ts,tsx} --write && eslint **/*.{ts,tsx} --fix"
+    "lint": "import-sort **/*.{ts,tsx} --write && eslint **/*.{ts,tsx} --fix",
+    "test": "jest --verbose --config jest.config.js"
   },
   "devDependencies": {
     "@gfx/zopfli": "^1.0.11",
+    "@types/jest": "^24.0.9",
     "@types/next": "^8.0.1",
     "@types/node": "^10.12.10",
     "@types/react": "^16.8.6",
     "@types/react-dom": "^16.8.2",
     "@zeit/next-typescript": "^1.1.1",
+    "babel-jest": "^24.1.0",
     "compression-webpack-plugin": "^2.0.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.10.0",
     "eslint": "^5.12.0",
     "eslint-config-prettier": "^3.5.0",
     "eslint-plugin-prettier": "^3.0.1",
@@ -25,11 +30,13 @@
     "import-sort-parser-babylon": "^5.2.0",
     "import-sort-parser-typescript": "^5.0.0",
     "import-sort-style-module": "^5.0.0",
+    "jest": "^24.1.0",
     "lint-staged": "^8.1.0",
     "next": "^8.0.3",
     "prettier": "^1.15.3",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
+    "ts-jest": "^24.0.0",
     "typescript": "^3.1.6",
     "typescript-eslint-parser": "^21.0.2"
   }

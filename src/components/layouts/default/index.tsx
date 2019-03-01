@@ -1,11 +1,11 @@
 import Link from "next/link";
 import * as React from "react";
 
-interface DefaultLayoutProps {
+interface Props {
   children: React.ReactNode;
 }
 
-const DefaultLayout: React.SFC<DefaultLayoutProps> = (props: DefaultLayoutProps) => {
+const DefaultLayout: React.SFC<Props> = (props: Props) => {
   return (
     <div>
       <header>

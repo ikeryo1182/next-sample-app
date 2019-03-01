@@ -1,14 +1,16 @@
 import Head from "next/head";
-import Router from "next/router";
+import { WithRouterProps, withRouter } from "next/router";
 import * as React from "react";
 
 interface State {
   url: string;
 }
 
-class CustomHead extends React.Component<{}> {
+interface Props extends WithRouterProps {}
+
+class CustomHead extends React.Component<Props, State> {
   public state: State = {
-    url: ""
+    url: "/"
   };
 
   private handleRouteChange = (url: string) => {
@@ -16,12 +18,18 @@ class CustomHead extends React.Component<{}> {
   };
 
   public componentDidMount() {
-    this.handleRouteChange(Router.asPath);
-    Router.events.on("routeChangeStart", this.handleRouteChange);
+    const { router } = this.props;
+    if (router) {
+      this.handleRouteChange(router.asPath);
+      router.events.on("routeChangeStart", this.handleRouteChange);
+    }
   }
 
   public componentWillUnmount() {
-    Router.events.off("routeChangeStart", this.handleRouteChange);
+    const { router } = this.props;
+    if (router) {
+      router.events.off("routeChangeStart", this.handleRouteChange);
+    }
   }
 
   public render() {
@@ -39,4 +47,5 @@ class CustomHead extends React.Component<{}> {
   }
 }
 
-export default CustomHead;
+// HELP: because there is bug of withRouter, it must be any
+export default withRouter(CustomHead as any);
