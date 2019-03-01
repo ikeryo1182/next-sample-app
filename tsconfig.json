@@ -26,7 +26,7 @@
     ],
     "typeRoots": [
       "node_modules/@types",
-      "types"
+      "./typings"
     ],
     "outDir": ".next",
     "rootDirs": [
